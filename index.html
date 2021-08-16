@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Order summary card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root { 
+      --very-pale-blue: hsl(225, 100%, 98%);
+      --pale-blue: hsl(225, 100%, 94%);
+      --desaturated-blue : hsl(224, 23%, 55%);
+      --bright-blue: hsl(245, 75%, 52%);
+      --dark-blue: hsl(223, 47%, 23%);
+    }
+
+    @font-face {
+      font-family: RedHatDisplay-Regular;
+      src: url(font/RedHatDisplay-Regular.ttf);
+    }
+    @font-face {
+      font-family: RedHatDisplay-MediumItalic;
+      src: url(font/RedHatDisplay-MediumItalic.ttf);
+    }
+    @font-face {
+      font-family: RedHatDisplay-Medium;
+      src: url(font/RedHatDisplay-Medium.ttf);
+    }
+    @font-face {
+      font-family: RedHatDisplay-Italic;
+      src: url(font/RedHatDisplay-Italic.ttf);
+    }
+    @font-face {
+      font-family: RedHatDisplay-BoldItalic;
+      src: url(font/RedHatDisplay-BoldItalic.ttf);
+    }
+    @font-face {
+      font-family: RedHatDisplay-Bold;
+      src: url(font/RedHatDisplay-Bold.ttf);
+    }
+    @font-face {
+      font-family: RedHatDisplay-BlackItalic;
+      src: url(font/RedHatDisplay-BlackItalic.ttf);
+    }
+    @font-face {
+      font-family: RedHatDisplay-Black;
+      src: url(font/RedHatDisplay-Black.ttf);
+    }
+
+    html,body {
+      height: 100%;
+    }
+
+    body{
+      background-color: var(--pale-blue);
+      background-image: url(images/pattern-background-desktop.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .attribution { font-size: 11px; text-align: center; bottom: 2px; right: 2px; position: absolute;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    .card{
+      background-color: white;
+      width: 28vw;
+      border-radius: 15px;
+      display: inline-block;
+      box-shadow: 0px 15px 25px -10px hsl(226, 54%, 77%);
+    }
+
+    .card img{
+      width: 100%;
+      border-radius: 15px 15px 0px 0px;
+    }
+
+    .card-body{
+      padding: 10px 10%;
+    }
+
+    .card-body h2{
+      text-align: center;
+      font-family: RedHatDisplay-Black;
+    }
+
+    .card-body p{
+      color: grey;
+      font-family: RedHatDisplay-Regular;
+      text-align: center;
+    }
+
+    .card-body .inner-card{
+      background-color: var(--very-pale-blue);
+      height: 80px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      padding: 20px 20px;
+      border-radius: 10px;
+      box-sizing: border-box;
+      margin: 20px 0px;
+    }
+
+    .inner-card img{
+      flex-grow: 1;
+      max-width: min-content;
+      align-self: center;
+    }
+
+    .inner-card-body{
+      flex-grow: 2;
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      margin: 0px 20px;
+      justify-content: space-between;
+      align-self: stretch;
+    }
+
+    .inner-card a{
+      flex-grow: 1;
+      align-self: center;
+      text-align: end;
+      margin: 0px 5px;
+      font-family: RedHatDisplay-Regular;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      color: var(--bright-blue);
+    }
+
+    .inner-card a:hover {
+      text-decoration: none;
+      color: hsl(245, 75%, 72%);
+    }
+
+    .inner-card-body p {
+      font-size: 14px;
+      font-family: RedHatDisplay-Regular;
+      margin: 0px;
+      text-align: start;
+    }
+
+    .title{
+      font-weight: 700;
+    }
+
+    .card-body button{
+      width: 100%;
+      display: block;
+    }
+
+    .card-body button{
+      border-radius: 10px;
+      font-family: RedHatDisplay-Bold;
+      padding: 15px 0px;
+      outline-style: none;
+      border: 0;
+      margin: 10px 0px;
+      cursor: pointer;
+    }
+
+    .main-button{
+      background-color: var(--bright-blue);
+      color: white;
+      box-shadow: 0px 10px 10px 5px var(--pale-blue);
+    }
+
+    .main-button:hover {
+      background-color: hsl(245, 75%, 72%);
+    }
+
+    .sub-button{
+      background-color: transparent;
+      color: grey;
+    }
+
+    .sub-button:hover {
+      color: black;
+    }
+
+    @media only screen and (max-width: 1200px) {
+      .card {
+        width: 38vw;
+      }
+    }
+    
+    @media only screen and (max-width: 900px) {
+      .card {
+        width: 50vw;
+      }
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .card {
+        width: 80vw;
+      }
+    }
+
+    @media only screen and (max-width: 375px) {
+      .card {
+        width: 90vw;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="images/illustration-hero.svg" alt="Hero">
+    <div class="card-body">
+      <h2>Order Summary</h2>
+      <p>You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</p>
+
+      <div class="inner-card">
+        <img src="images/icon-music.svg" alt="music icon">
+        <div class="inner-card-body">
+          <p class="title" style="color: black;">Annual Plan</p>
+          <p class="subtitle">$59.99/year</p>
+        </div>
+        <a href="#">Change</a>
+      </div>
+
+      <button class="main-button">Proceed to Payment</button>
+      <button class="sub-button">Cancel Order</button>
+
+    </div>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Ebram Noshy Morkos</a>.
+  </div>
+</body>
+</html>
